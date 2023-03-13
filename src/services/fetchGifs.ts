@@ -1,4 +1,4 @@
-import { state } from "../types";
+import { state, gif } from "../types";
 
 const fetchGifs = async (topic: string, amount: number) => {
   const res = await fetch(
@@ -7,7 +7,7 @@ const fetchGifs = async (topic: string, amount: number) => {
 
   const { data } = await res.json();
 
-  const gifs = data.map((img: any) => {
+  const gifs:gif[] = data.map((img: any) => {
     return {
       id: img.id,
       title: img.title,

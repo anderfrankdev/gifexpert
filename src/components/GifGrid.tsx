@@ -5,14 +5,21 @@ export interface props {
 }
 
 export const GifGrid = ({ categories }: props) => {
-  return (
-    <div>
-      {...categories.map((category) => (
-        <div key={category}>
+
+  const categoryItems = categories.map((category) => (
+        <div key={category} className="category">
           <h2>{category}</h2>
           <GifImages category={category} />
         </div>
-      ))}
+      ))
+
+  const content = categories.length < 1
+    ? <p>Add a category</p>
+    : categoryItems
+  
+  return (
+    <div data-testid="content">
+      {content}
     </div>
   );
 };

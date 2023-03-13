@@ -16,6 +16,7 @@ function App() {
         className="input"
         onKeyUp={addCategory(categoryState)}
         placeholder="Type a topic"
+        data-testid="input"
       />
 
       <button onClick={addCategory(categoryState)} className="button">
