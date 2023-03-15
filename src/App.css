@@ -1,21 +1,47 @@
+:root {
+  /****** Fluid reset *******/
+  /* @link https://utopia.fyi/type/calculator?c=320,15,1.2,1024,17,1.25,4,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+  --step-0: clamp(1.50rem, calc(1.05rem + 2.27vw), 2.50rem);
+}
+
 #root {
-  flex-direction: column;
-  display: flex;
   height: 100vh;
   width: 100%;
-  padding: 2rem;
+  padding: 0rem;
+  padding-block: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 
+    min-content 
+    min-content 
+    min-content 
+    min-content 
+    auto;
+}
+
+.title{
+  font-size: var(--step-0);
+  margin-inline: 1rem;
 }
 
 .input {
   height: 2rem;
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  width: calc( 100% - 2rem );
+  display: block;
+  margin-inline: 1rem;
 }
 
 .button {
   background-color: mediumpurple;
   color: white;
   border-width: 3px;
+  width: calc( 100% - 2rem );
+  display: block;
+  margin-inline: 1rem;
 }
 .button:hover {
   border-color: lightcyan;
@@ -23,17 +49,22 @@
 
 .gifs-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  width: 100%;
+  overflow-y: auto;
+  margin-top: 1rem;
 }
 
 .gifs-container > div {
-  margin: 1rem;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .load-msg{
-  font-size: 4rem;
+  font-size: var(--step-0);
 }
 
 .gif-image{

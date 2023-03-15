@@ -15,7 +15,7 @@ const fetchGifs = async (topic: string, amount: number) => {
     };
   });
 
-  return gifs;
+  return [topic,gifs];
 };
 
 export default fetchGifs;

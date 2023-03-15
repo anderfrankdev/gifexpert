@@ -1,10 +1,9 @@
 import { curry } from "../utils/functional";
-import { state } from "../types";
 
 export type addEvent = React.KeyboardEvent | React.MouseEvent;
 
-const addCategory = curry((stateUsed: state, event: addEvent): void => {
-  const [categories, setCategories] = stateUsed;
+const addCategory = curry((stateUsed: any, event: addEvent): void => {
+  const [categories, setCategories, setPrimary] = stateUsed;
   let input: HTMLInputElement | null = null;
 
   if (event.type === "click") {
@@ -19,11 +18,17 @@ const addCategory = curry((stateUsed: state, event: addEvent): void => {
   const category: string = input!.value;
 
   if (category.trim().length < 2) return;
-  if (categories.includes(category)) return;
+  if (categories[category]) return;
 
   input!.value = "";
 
-  if (input != null) setCategories([...categories, category]);
+  if (input != null) {
+    setCategories({
+      ...categories,
+      [category]:[]
+    });
+    setPrimary(category)
+  }
 });
 
 export default addCategory;
