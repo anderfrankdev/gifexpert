@@ -1,0 +1,51 @@
+.container{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	display: flex;
+	width: calc( 100% - 2rem );
+	margin-inline: 1rem;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: fit-content;
+}
+.nav_item{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-right: 1rem;
+	height: fit-content;
+	background-color: #efefef;
+	color: #000;
+	border-radius: 10px;
+	transition: linear 500ms;
+	cursor: pointer;
+}
+.primary{
+	background-color: darkcyan;
+	color: white;
+}
+.nav_item:hover{
+	background-color: violet;
+}
+
+.category_name{
+	margin: 0.5rem;
+	font-weight: 900;
+	height: 100%;
+	width: 5rem;
+
+}
+
+.category_btn{
+	background-color: darkred;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	color: white;
+	font-weight: 900;
+	cursor: pointer;
+	margin-right: 0.6rem;
+}

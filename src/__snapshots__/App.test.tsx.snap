@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tests in <App/> > Should match snapshot 1`] = `
+<div>
+  <h1>
+    GifExpertApp
+  </h1>
+  <input
+    class="input"
+    placeholder="Type a topic"
+    type="text"
+  />
+  <button
+    class="button"
+  >
+    Agregar
+  </button>
+  <div>
+    <p>
+      Add a category
+    </p>
+  </div>
+</div>
+`;
